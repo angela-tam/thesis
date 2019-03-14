@@ -18,6 +18,6 @@ Author: Angela Tam
 
 Please note this work is derived from the following:
 #### Masters/Doctoral Thesis Version 1.6 (27/8/17) [available on Overleaf](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl)
-- Files were originally downloaded from http://www.LaTeXTemplates.com and authored by: [Vel](vel@latextemplates.com) & Johannes Böttcher and later modified by [Steve Gunn](http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/) and [Sunil Patel](http://www.sunilpatel.co.uk/thesis-template/)
+- Files were originally downloaded from http://www.LaTeXTemplates.com and authored by: Vel (vel@latextemplates.com) & Johannes Böttcher and later modified by [Steve Gunn](http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/) and [Sunil Patel](http://www.sunilpatel.co.uk/thesis-template/)
 
 
