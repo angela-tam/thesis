@@ -1,0 +1,359 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thesis LaTeX template by Angela Tam
+% This template (mostly) conforms to the thesis requirements of McGill University
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Please note that this work is derived from the following:
+%
+% Masters/Doctoral Thesis
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+onehalfspacing, % line spacing, options: singlespacing, onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[backend=bibtex,style=authoryear,natbib=true,dashed=false]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{papers_library.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage[section]{placeins} % force floats to stay within section
+
+%\usepackage{floatrow} % library for side captions? (and probably other things)
+\usepackage{sidecap} % library for side captions
+\sidecaptionvpos{figure}{t} % force side captions to align to top of figure
+
+% other options for captions
+\captionsetup[table]{font=scriptsize,labelfont=scriptsize}
+\captionsetup[figure]{font=scriptsize,labelfont=scriptsize}
+
+\usepackage{pdfpages} % insert pdf files into latex doc
+
+\usepackage[titletoc]{appendix} % appendices package
+
+% allow for strike-out and underline
+\usepackage[normalem]{ulem}
+
+\usepackage[raggedright]{titlesec} % don't hyphenate titles/headings
+
+% this sets the deepest level at which to number sections and subsections
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% package to make typeset look prettier
+\usepackage{microtype}
+
+% command to set font for headers
+\renewcommand{\headfont}{\textsc} %\normalfont
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=2.5cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Predicting Alzheimer's dementia from heterogeneous patterns of neurodegeneration and functional connectivity} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Dr. James \textsc{Smith}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{\textsc{Angela Tam}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Neuroscience} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{http://www.university.com}{University Name}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://department.university.com}{Department or School Name}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://researchgroup.university.com}{Research Group Name}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://faculty.university.com}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+\hypersetup{citecolor=blue} % link colours
+\hypersetup{linkcolor=blue}
+\hypersetup{urlcolor=blue}
+}
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+%{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+
+
+{\Large \authorname}\\ % Author name - remove the \href bracket to remove the link
+Integrated Program in Neuroscience\\
+McGill University, Montreal\\
+August 2018
+
+\vfill
+
+\small \textit{A thesis submitted to McGill University in partial fulfillment\\ of the requirements of the degree of \degreename}\\[0.3cm] % University requirement text
+
+
+\vfill
+
+{\small \copyright\ Angela Tam, 2018}\\[1cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+There is a large field of research dedicated to the development of biomarkers for an early diagnosis of Alzheimer's disease (AD). Predicting AD dementia within an individual, especially at a prodromal stage like mild cognitive impairment (MCI), is complicated by the vast amount of heterogeneity present in populations. This thesis explores heterogeneity in brain organization with magnetic resonance imaging (MRI) in order to develop biomarkers to identify individuals who will progress to AD dementia. Chapter 1 provides a brief introduction to the problem at hand and lists the specific aims of this thesis. Chapter 2 provides a review of the literature of biomarker development for AD, with a focus on MRI-based studies and prediction of cognitive trajectories with machine learning. In chapter 3, we present a study that explored whether there were functional connections in resting-state networks that could consistently discriminate between patients with MCI and cognitively normal older adults in the face of heterogeneity from methodological procedures. We identified functional connections that were robustly altered in the default mode network and the cortical-strial-thalamic loop, albeit with small to medium effect sizes, in MCI patients compared to controls in several independent datasets. We also provide sample size estimates to obtain adequate statistical power in a multisite study setting. Chapter 4 presents a study describing resting-state networks at various spatial resolutions in a heterogeneous sample of older adults with and without cognitive impairment. In chapter 5, we describe a study in which we developed a signature based on brain atrophy patterns and cognitive deficits that is highly predictive of future progression to AD dementia in a subgroup of individuals with MCI. By harnessing the heterogeneity in brain structure, we were able to achieve higher positive predictive values and specificity compared to previous works at predicting progression to dementia from the MCI stage. Lastly, a discussion of the contributions and future developments from these studies is presented in chapter 6. This thesis provides novel insights into the heterogeneity of structural and functional brain organization and the use of MRI as a tool to develop biomarkers for AD.
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	FRENCH ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{resume}
+\addchaptertocentry{\resumename} % Add the abstract to the table of contents
+Il y a un grand domaine de recherche dédié à l’identification précoce de la maladie d’Alzheimer (MA). La prédiction de la démence liée à la MA chez un individu, surtout dans ceux qui sont atteints des troubles cognitifs légers (TCL), est compliquée à cause de la variabilité au niveau des populations. Cette thèse explore l’hétérogénéité dans l’organisation du cerveau avec l’imagerie par résonance magnétique (IRM) pour l’objectif de développer des biomarqueurs capables d’identifier des individus qui seront atteints de la démence liée à la MA. Chapitre 1 introduit le problème et les objectifs spécifiques de la thèse. Chapitre 2 consiste en un survol de la littérature du développement des biomarqueurs pour la MA, avec un emphase sur les études d'IRM et la prédiction des trajets cognitifs avec l’apprentissage machine. Chapitre 3 offre un étude où on examine la présence des connections fonctionnels dans les réseaux d’état de repos qui pourraient discriminer systématiquement entre les patients avec des TCL et les personnes âgées cognitivement sains, malgré l’hétérogénéité des procédures méthodologiques. On a identifié des connections fonctionnels dans le réseau mode par défaut et le circuit entre le cortex, striatum et thalamus qui étaient altérés de manière robuste dans les patients avec des TCL comparés aux contrôles dans plusieurs jeux de données indépendants. Nous offrons aussi des estimations des tailles d’échantillon pour obtenir le pouvoir statistique adéquat dans un contexte de recherche multisite. Chapitre 4 présent un étude qui décrit les réseaux d’état de repos à travers de nombreux résolutions spatiaux dans un échantillon hétérogène de personnes âgées avec et sans des troubles cognitifs. Dans chapitre 5, on a développer une signature basée sur les patrons d’atrophie du cerveau et déficits cognitifs qui est hautement prédictive de la démence liée à la MA dans un sous-groupe d’individus avec TCL. En employant l’hétérogénéité de la structure du cerveau, on rapport des valeurs prédictive positives et des spécificités plus hausses que les études antérieures qui ont visé à prédire la progression vers la démence de l’étage des TCL. Finalement, le chapitre 6 porte sur une discussion des contributions et développements futurs de ces études. Cette thèse apporte des nouveaux apprentissages par rapport à l’hétérogénéité de l’organisation structurelle et fonctionnelle du cerveau et l’utilité de l’IRM comme un outil pour le développement des biomarqueurs de la MA.
+\end{resume}
+
+
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+\microtypesetup{protrusion=false}
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+\microtypesetup{protrusion=true}
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{rl} % Include a list of abbreviations (a table of two columns)
+
+\textbf{A$\beta$} & \textbf{A}myloid \textbf{$\beta$}\\
+\textbf{AD} & \textbf{A}lzheimer's \textbf{D}isease\\
+\textbf{ADNI} & \textbf{A}lzheimer's \textbf{D}isease \textbf{N}euroimaging \textbf{I}nitiative\\
+\textbf{aMCI} & \textbf{a}mnestic \textbf{M}ild \textbf{C}ognitive \textbf{I}mpairment\\
+\textbf{APOE} & \textbf{APO}lipoprotein \textbf{E}\\
+\textbf{APP} & \textbf{A}myloid \textbf{P}recursor \textbf{P}rotein\\
+\textbf{BASC} & \textbf{B}ootstrap \textbf{A}nalysis of \textbf{S}table \textbf{C}lusters\\
+\textbf{CN} & \textbf{C}ognitively \textbf{N}ormal\\
+\textbf{DMN} & \textbf{D}efault \textbf{M}ode \textbf{N}etwork\\
+\textbf{fMRI} & \textbf{f}unctional \textbf{M}agnetic \textbf{R}esonance \textbf{I}maging\\
+\textbf{HPS} & \textbf{H}ighly \textbf{P}redictive \textbf{S}ignature\\
+\textbf{LDA} & \textbf{L}inear \textbf{D}iscriminant \textbf{A}nalysis\\
+\textbf{MCI} & \textbf{M}ild \textbf{C}ognitive \textbf{I}mpairment\\
+\textbf{MRI} & \textbf{M}agnetic \textbf{R}esonance \textbf{I}maging\\
+\textbf{MSTEPS} & \textbf{M}ultiscale \textbf{STEP}wise \textbf{S}election\\
+\textbf{PET} & \textbf{P}ositron \textbf{E}mission \textbf{T}omography\\
+\textbf{pMCI} & \textbf{p}rogressive \textbf{M}ild \textbf{C}ognitive \textbf{I}mpairment\\
+\textbf{PSEN1} & \textbf{P}re\textbf{SEN}ilin \textbf{1}\\
+\textbf{PSEN2} & \textbf{P}re\textbf{SEN}ilin \textbf{2}\\
+\textbf{sMCI} & \textbf{s}table \textbf{M}ild \textbf{C}ognitive \textbf{I}mpairment\\
+\textbf{SVM} & \textbf{S}upport \textbf{V}ector \textbf{M}achine\\
+\textbf{VBM} & \textbf{V}oxel-\textbf{B}ased \textbf{M}orphometry\\
+
+
+\end{abbreviations}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+I would first like to thank my supervisor Dr. Pierre Bellec for his support. I am without a doubt a significantly more competent scientist than when I first started my Ph.D. and I could not have done that without his investment in me. I cannot have imagined a better mentor and I will always be grateful for the lessons and opportunities that Pierre provided. I would like to thank my co-supervisor Dr. John Breitner for his support, guidance, and advice throughout my degree. I thank my SIMEXP labmates (past and present), Dr. Aman Badhwar, Sebastian Urchs, Yassine Benhajali, Perrine Ferré, Clara Moreau, Amal Boukdhir, Jonathan Armoza, Dr. Pierre-Olivier Quirion, Phil Dickinson, Dr. Yu Zhang, for the many laughs and for creating a fun and stimulating work environment. I would especially like to thank Dr. Christian Dansereau and Dr. Pierre Orban for their mentorship, and I was lucky to have them as my role models. I'm grateful for the entire SIMEXP team and I'm going to miss everyone terribly. I also thank Dr. Marie-Élyse Lafaille-Magnan for her solidarity and discussions. I also give thanks to my friends outside of academia for their tremendous support and encouragement. I want to thank Jacob Vogel for the long days and nights we spent working alongside each other and everything else in between. Lastly, I thank my family, especially my parents, my brother Brandon, and my grandparents, for their love and the many home-cooked meals that helped me get through every challenge, scientific or otherwise, as a better person.
+\end{acknowledgements}
+
+
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{To my parents\ldots I'm sorry I got a job in Singapore so I probably won't come back for graduation.}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape Reality is not what you perceive; it's what the methods and tools of science reveal.}\bigbreak
+
+\hfill Neil deGrasse Tyson
+
+%----------------------------------------------------------------------------------------
+%	CONTRIBUTIONS PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{contributions}
+\addchaptertocentry{\contribs} % Add the declaration to the table of contents
+As lead author of the studies described in chapters 3 through 5, I took the lead in executing the experiments. This included study design, data preprocessing, quality assessment, statistical analysis, visualization and interpretation of results, and writing of the manuscripts. I also received much appreciated and valuable help from my co-authors, outlined below.
+
+
+%\noindent
+%\textbf{Chapters 3 and 4}
+\subsection*{Chapters 3 and 4}
+\begin{itemize}
+\setlength\itemsep{0em}
+  \item Christian Dansereau: data preprocessing and quality control
+  \item AmanPreet Badhwar: writing of the manuscript
+  \item Pierre Orban: visualization of results
+  \item Sylvie Belleville: review of the manuscript
+  \item Howard Chertkow: advice for methods
+  \item Alain Dagher: data collection
+  \item Alexandru Hanganu: data collection
+  \item Oury Monchi: data collection
+  \item Pedro Rosa-Neto: data collection and curation
+  \item Amir Shmuel: data collection
+  \item Seqian Wang: data curation
+  \item John Breitner: writing of the manuscript
+  \item Pierre Bellec: study design, interpretation of results, and writing of the manuscript
+\end{itemize}
+
+\cleardoublepage
+
+%\noindent
+%\textbf{Chapter 5}
+\subsection*{Chapter 5}
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Christian Dansereau: design of methods
+\item Yasser Iturria-Medina: design of methods
+\item Sebastian Urchs: design of methods
+\item Pierre Orban: design of methods
+\item John Breitner: review of manuscript
+\item Pierre Bellec: study design, interpretation of results, and writing of manuscript
+\end{itemize}
+
+
+\end{contributions}
+
+\cleardoublepage
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/chap_1_intro}
+\include{Chapters/chap_2_review}
+\include{Chapters/chap_3_rsfmri_mci}
+\include{Chapters/chap_4_parcel}
+\include{Chapters/chap_5_hps}
+\include{Chapters/chap_6_discussion}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+\begin{appendices}
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\include{Appendices/appendix_1}
+\include{Appendices/appendix_2}
+\include{Appendices/appendix_3}
+
+\end{appendices}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
