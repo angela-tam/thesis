@@ -8,9 +8,9 @@ This repository contains
 #### 3) An example for a single chapter (chapter_1_intro.tex)
 * An example of how to write a chapter that would be inserted into the `main.tex`
 
-For more detailed instructions on how to write with this class, you can refer to this template (see note below) on [Overleaf](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl).
+For more detailed instructions on how to write with this class, you can refer to [this template (see note below) on Overleaf](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl).
 
-If you'd like to check out a finalized thesis that was written with this template, click [here](http://digitool.Library.McGill.CA:80/R/-?func=dbin-jump-full&object_id=160752&silo_library=GEN01).
+If you'd like to check out a finalized thesis that was written with the template in this repo, click [here](http://digitool.Library.McGill.CA:80/R/-?func=dbin-jump-full&object_id=160752&silo_library=GEN01).
 
 Happy writing! :)
 
