@@ -19,5 +19,6 @@ Author: Angela Tam
 Please note this work is derived from the following:
 #### Masters/Doctoral Thesis Version 2.5 (27/8/17) [available on Overleaf](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl)
 - A template authored by Vel (vel@latextemplates.com) & Johannes Böttcher, who had derived their template from [Steve Gunn](http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/) and [Sunil Patel](http://www.sunilpatel.co.uk/thesis-template/)
+- I just made some minor modifications, so the credit really goes to the above authors.
 
 
