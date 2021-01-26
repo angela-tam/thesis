@@ -1,7 +1,7 @@
 # thesis
 
 This repository contains 
-#### 1) A LaTeX CLS file (MastersDoctoralThesis.cls)
+#### 1) A LaTeX CLS file (McGillThesis.cls)
 * This class file contains a template for a thesis that conforms to the requirements for a thesis for McGill University (at least back in 2018 when I wrote mine). This file basically defines the structure of the thesis.
 #### 2) A .tex template (main.tex)
 * A template to write or put the entire thesis together using the abovementioned class file.
